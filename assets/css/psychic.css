@@ -3,6 +3,7 @@
 
 body { 
     background: url("images/EYE.jpg");
+    height: 900px;
 }
 
 h1 { 
@@ -21,7 +22,7 @@ h2 {
     color: orangered;
     margin-top: 60px;
 }
-.content { 
+ .content { 
     margin: auto;
     
     margin-top: 230px;
@@ -30,9 +31,25 @@ h2 {
     color: white;
     background: url("images/question-1018843_1280.jpg");
     background-position: center;
+    
+    animation-name: example;
+    animation-duration: 4s;
 }
 .words { 
   
     height: 80px;
    
 }
+
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:50px; top:0px;}
+    50%  {background-color:blue; left:50px; top:50px;}
+    75%  {background-color:green; left:0px; top:50px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+  h4 { 
+    
+    margin-left: 580px;
+    margin-top: 100px;
+  }

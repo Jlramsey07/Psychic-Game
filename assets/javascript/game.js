@@ -22,16 +22,25 @@ var guessesSoFarText = document.getElementById("guess-sofar");
 var userChoiceText = document.getElementById("user-Choice");
 var cpuLastChoiceText = document.getElementById("CPU-Choice");
 
-var startGame = confirm("Do you have what it takes to read my mind ?")
-if (startGame){ 
-        alert("CPU will randomly pick a letter between A-Z")
-        alert("To begin press any A-Z character. GOOD LUCK")
-}
+
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
     // Determines which key was pressed.
     var userGuess = event.key;
+    
+if (userGuess === "7"){ 
+            userGuess= ""
+            guessCount++;
+            guessesSoFar--;
+    var startGame = confirm("Do you have what it takes to read my mind ?")
+        if(startGame){  
+            
+            
+            alert("CPU will randomly pick a letter between A-Z. Try to guess the computer's selection. GOOD LUCK!!!!");
+         }
+}
+        
 
     var randNum = cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
  if((randNum === userGuess) || (randNum !== userGuess)){
@@ -51,6 +60,12 @@ document.onkeyup = function (event) {
         alert("YOU LOSE");
         
     }
+
+    if((lossCount === 3) && (guessCount ===0)){ 
+        alert("You Remind me of Ms. Cleo lol. \"CALL ME NOW\"")
+        
+    }
+
 
     if ((guessCount === 0)|| (guessesSoFar === 10)){ 
         guessCount = 10;
