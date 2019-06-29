@@ -28,6 +28,11 @@ var cpuLastChoiceText = document.getElementById("CPU-Choice");
 document.onkeyup = function (event) {
     // Determines which key was pressed.
     var userGuess = event.key;
+    for (var i=0;i < cpuChoices.length; i++){ 
+        if(i !== userGuess){ 
+            console.log()
+        }
+    }
     
 if (userGuess === "7"){ 
             userGuess= ""
@@ -44,6 +49,7 @@ if (userGuess === "7"){
 
     var randNum = cpuChoices[Math.floor(Math.random() * cpuChoices.length)];
  if((randNum === userGuess) || (randNum !== userGuess)){
+
      
     if (randNum === userGuess){
         guessCount = 10;
